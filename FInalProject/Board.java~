@@ -60,8 +60,21 @@ public class Board{
     System.out.println();
   }
   
+  //If a player won, return who won (1 or 0)
+  //If no player won, return -1
   public int checkWin(){
-    //CHECK FOR WIN
+    //CHECK SIDEWAYS 4 in a row
+    for(int row=0; row<board.length; row++){
+      for(int col=0; col<board[0].length-4; col++){
+        if((board[row][col]!=-1) && (board[row][col]==board[row][col+1]) && (board[row][col+1]==board[row][col+2]) && (board[row][col+2]==board[row][col+3]) && (board[row][col+3]==board[row][col+4])){
+          return board[row][col];
+        }
+      }
+    }
+    //CHECK VERTICALLY 4 in a row
+    for(int row=0; row<board.length-4; row++){
+      for(int col=0; col<)
+    }
   }
   
   public static void main(String[] args){

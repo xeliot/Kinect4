@@ -73,8 +73,15 @@ public class Board{
     }
     //CHECK VERTICALLY 4 in a row
     for(int row=0; row<board.length-4; row++){
-      for(int col=0; col<)
+      for(int col=0; col<board[0].length; col++){
+        if((board[row][col!=-1]) && (board[row][col]==board[row+1][col]) && (board[row+1][col]==board[row+2][col]) && (board[row+2][col]==board[row+3][col]) && (board[row+3][col]==board[row+4][col])){
+          return board[row][col];
+        }
+      }
     }
+    //CHECK DIAGONALLY -SLOPE 4 in a row
+    
+    //CHECK DIAGONALLY +SLOPE 4 in a row
   }
   
   public static void main(String[] args){
