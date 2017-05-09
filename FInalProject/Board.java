@@ -65,18 +65,14 @@ public class Board{
   public int checkWin(){
     //CHECK SIDEWAYS 4 in a row
     for(int row=0; row<board.length; row++){
-      for(int col=0; col<board[0].length-4; col++){
-        if(board[row][col]!=-1){
-          System.out.println(row+" "+col);
-          System.out.println(board[row][col]);
-        }
+      for(int col=0; col<board[0].length-3; col++){
         if((board[row][col]!=-1) && (board[row][col]==board[row][col+1]) && (board[row][col+1]==board[row][col+2]) && (board[row][col+2]==board[row][col+3])){
           return board[row][col];
         }
       }
     }
     //CHECK VERTICALLY 4 in a row
-    for(int row=0; row<board.length-4; row++){
+    for(int row=0; row<board.length-3; row++){
       for(int col=0; col<board[0].length; col++){
         if((board[row][col]!=-1) && (board[row][col]==board[row+1][col]) && (board[row+1][col]==board[row+2][col]) && (board[row+2][col]==board[row+3][col])){
           return board[row][col];
@@ -91,7 +87,7 @@ public class Board{
         }
       }
     }
-    
+   
     //CHECK DIAGONALLY +SLOPE 4 in a row
     for(int row=board.length-1; row>=4; row--){
       for(int col=0; col<board[0].length-4; col++){
@@ -107,10 +103,10 @@ public class Board{
   
   public static void main(String[] args){
     Board board = new Board();
-    board.dropPiece(0, 0);
-    board.dropPiece(1, 0);
-    board.dropPiece(2, 0);
-    board.dropPiece(3, 0);
+    board.dropPiece(6, 1);
+    board.dropPiece(5, 1);
+    board.dropPiece(4, 1);
+    board.dropPiece(3, 1);
     board.printBoard();
     System.out.println(board.checkWin());
   }
