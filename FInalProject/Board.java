@@ -80,8 +80,25 @@ public class Board{
       }
     }
     //CHECK DIAGONALLY -SLOPE 4 in a row
+    for(int row=0; row<board.length-4; row++){
+      for(int col=0; col<board[0].length-4; col++){
+        if((board[row][col]!=-1) && (board[row][col]==board[row+1][col+1]) && (board[row+1][col+1]==board[row+2][col+2]) && (board[row+2][col+2]==board[row+3][col+3]) && (board[row+3][col+3]==board[row+4][col+4])){
+          return board[row][col];
+        }
+      }
+    }
     
     //CHECK DIAGONALLY +SLOPE 4 in a row
+    for(int row=board.length-1; row>=4; row--){
+      for(int col=0; col<board[0].length-4; col++){
+        if((board[row][col]!=-1) && (board[row][col]==board[row-1][col+1]) && (board[row-1][col+1]==board[row-2][col+2]) && (board[row-2][col+2]==board[row-3][col+3]) && (board[row-3][col+3]==board[row-4][col+4])){
+          return board[row][col];
+        }
+      }
+    }
+    
+    //NO CHECKS PASSED
+    return -1;
   }
   
   public static void main(String[] args){
