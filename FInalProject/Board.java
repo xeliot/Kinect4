@@ -66,7 +66,11 @@ public class Board{
     //CHECK SIDEWAYS 4 in a row
     for(int row=0; row<board.length; row++){
       for(int col=0; col<board[0].length-4; col++){
-        if((board[row][col]!=-1) && (board[row][col]==board[row][col+1]) && (board[row][col+1]==board[row][col+2]) && (board[row][col+2]==board[row][col+3]) && (board[row][col+3]==board[row][col+4])){
+        if(board[row][col]!=-1){
+          System.out.println(row+" "+col);
+          System.out.println(board[row][col]);
+        }
+        if((board[row][col]!=-1) && (board[row][col]==board[row][col+1]) && (board[row][col+1]==board[row][col+2]) && (board[row][col+2]==board[row][col+3])){
           return board[row][col];
         }
       }
@@ -74,7 +78,7 @@ public class Board{
     //CHECK VERTICALLY 4 in a row
     for(int row=0; row<board.length-4; row++){
       for(int col=0; col<board[0].length; col++){
-        if((board[row][col!=-1]) && (board[row][col]==board[row+1][col]) && (board[row+1][col]==board[row+2][col]) && (board[row+2][col]==board[row+3][col]) && (board[row+3][col]==board[row+4][col])){
+        if((board[row][col]!=-1) && (board[row][col]==board[row+1][col]) && (board[row+1][col]==board[row+2][col]) && (board[row+2][col]==board[row+3][col])){
           return board[row][col];
         }
       }
@@ -82,7 +86,7 @@ public class Board{
     //CHECK DIAGONALLY -SLOPE 4 in a row
     for(int row=0; row<board.length-4; row++){
       for(int col=0; col<board[0].length-4; col++){
-        if((board[row][col]!=-1) && (board[row][col]==board[row+1][col+1]) && (board[row+1][col+1]==board[row+2][col+2]) && (board[row+2][col+2]==board[row+3][col+3]) && (board[row+3][col+3]==board[row+4][col+4])){
+        if((board[row][col]!=-1) && (board[row][col]==board[row+1][col+1]) && (board[row+1][col+1]==board[row+2][col+2]) && (board[row+2][col+2]==board[row+3][col+3])){
           return board[row][col];
         }
       }
@@ -91,7 +95,7 @@ public class Board{
     //CHECK DIAGONALLY +SLOPE 4 in a row
     for(int row=board.length-1; row>=4; row--){
       for(int col=0; col<board[0].length-4; col++){
-        if((board[row][col]!=-1) && (board[row][col]==board[row-1][col+1]) && (board[row-1][col+1]==board[row-2][col+2]) && (board[row-2][col+2]==board[row-3][col+3]) && (board[row-3][col+3]==board[row-4][col+4])){
+        if((board[row][col]!=-1) && (board[row][col]==board[row-1][col+1]) && (board[row-1][col+1]==board[row-2][col+2]) && (board[row-2][col+2]==board[row-3][col+3])){
           return board[row][col];
         }
       }
@@ -104,7 +108,10 @@ public class Board{
   public static void main(String[] args){
     Board board = new Board();
     board.dropPiece(0, 0);
-    board.dropPiece(0, 1);
+    board.dropPiece(1, 0);
+    board.dropPiece(2, 0);
+    board.dropPiece(3, 0);
     board.printBoard();
+    System.out.println(board.checkWin());
   }
 }
