@@ -37,6 +37,8 @@ public class Board{
   }
   
   public void printBoard(){
+    for(int i=0; i<board[0].length; i++){System.out.print(" "+(i+1));} 
+    System.out.println();
     System.out.print(" ");
     for(int i=0; i<board[0].length*2; i++){System.out.print("_");} //print out top frame
     for(int i=0; i<board.length; i++){
