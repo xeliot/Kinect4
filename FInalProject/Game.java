@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Game{
   
   private int playerTurn;
+  private String player1Name;
+  private String player2Name;
   
   public static void main(String[] args){
     System.out.println("Welcome to Kinect4");
