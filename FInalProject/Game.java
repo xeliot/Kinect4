@@ -5,6 +5,8 @@ public class Game{
   private int playerTurn;
   
   public static void main(String[] args){
+    System.out.println("Welcome to Kinect4");
+    System.out.println("Designed by Dave, Santosh, and JJ");
     Scanner scan = new Scanner(System.in); // Create new scanner
     Board board = new Board(); // Create new board
     board.printBoard(); // Initial board print
