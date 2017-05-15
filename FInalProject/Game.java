@@ -13,23 +13,23 @@ public class Game{
     Board board = new Board(); // Create new board
     board.printBoard(); // Initial board print
     while(board.checkWin()==-1){
-      System.out.println("Player 1, please enter a column (1-7).");
+      System.out.println(player1Name + ", please enter a column (1-7).");
       int p1 = scan.nextInt();
       board.dropPiece(p1-1, 0);
       board.printBoard();
       if(board.checkWin()!=-1){
-        System.out.println("Player 1 wins!");
+        System.out.println(player1Name + " wins!");
         break;
       }
-      System.out.println("Player 2, please enter a column (1-7).");
+      System.out.println(player2Name + ", please enter a column (1-7).");
       int p2 = scan.nextInt();
       board.dropPiece(p2-1, 1);
       board.printBoard();
       if(board.checkWin()!=-1){
-        System.out.println("Player 2 wins!");
+        System.out.println(player2Name + " wins!");
         break;
       }
     }
-    System.out.println("The game is over");
+    System.out.println("Thanks for playing");
   }
 }
