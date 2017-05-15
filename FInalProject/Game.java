@@ -9,11 +9,12 @@ public class Game{
   public static void main(String[] args){
     System.out.println("Welcome to Kinect4");
     System.out.println("Designed by Dave, Santosh, and JJ");
+    System.out.println("----------------------------------");
     Scanner scan = new Scanner(System.in); // Create new scanner
     Board board = new Board(); // Create new board
-    System.out.println("Hi Player1. Please enter your name");
+    System.out.println("Hi Player 1. Please enter your name");
     player1Name = scan.nextLine();
-    System.out.println("Hi Player2. Please enter your name");
+    System.out.println("Hi Player 2. Please enter your name");
     player2Name = scan.nextLine();
     board.printBoard(); // Initial board print
     while(board.checkWin()==-1){
