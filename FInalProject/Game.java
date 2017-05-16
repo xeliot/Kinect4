@@ -20,6 +20,7 @@ public class Game{
     while(board.checkWin()==-1){
       System.out.println(player1Name + ", please enter a column (1-7).");
       int p1 = scan.nextInt();
+      // TODO: CHECK VALIDITY OF VALUE ENTERED
       board.dropPiece(p1-1, 0);
       board.printBoard();
       if(board.checkWin()!=-1){
@@ -28,6 +29,7 @@ public class Game{
       }
       System.out.println(player2Name + ", please enter a column (1-7).");
       int p2 = scan.nextInt();
+      // TODO: CHECK VALIDITY OF VALUE ENTERED
       board.dropPiece(p2-1, 1);
       board.printBoard();
       if(board.checkWin()!=-1){
