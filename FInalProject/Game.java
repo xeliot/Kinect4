@@ -24,14 +24,14 @@ public class Game{
     Scanner scan = new Scanner(System.in);
     while(board.checkWin()==-1){
       System.out.println(player1Name + ", please enter a column (1-7).");
-      int p1;
+      int p1 = -1;
       // TODO: CHECK VALIDITY OF VALUE ENTERED
-      while(true){
+      while(p1 == -1){
         try{
           p1 = scan.nextInt();
-          break;
         }catch (InputMismatchException e){
           System.out.println("Invalid; please reenter value.");
+          scan.next();
         }
       }
       board.dropPiece(p1-1, 0);
@@ -41,12 +41,11 @@ public class Game{
         break;
       }
       System.out.println(player2Name + ", please enter a column (1-7).");
-      int p2;
+      int p2 = -1;
       // TODO: CHECK VALIDITY OF VALUE ENTERED
-      while(true){
+      while(p2 == -1){
         try{
           p2 = scan.nextInt();
-          break;
         }catch (InputMismatchException e){
           System.out.println("Invalid; please reenter value.");
         }

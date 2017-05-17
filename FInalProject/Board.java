@@ -24,6 +24,9 @@ public class Board{
   //return true if drop piece is successful
   //return false if drop piece is unsuccessful
   public boolean dropPiece(int column, int color){
+    if(column < 0 || column > 6){
+      return false;
+    }
     if(board[0][column]!=-1){
       return false; //that column is full
     }
