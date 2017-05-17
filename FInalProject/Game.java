@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Game{
   
@@ -23,8 +24,16 @@ public class Game{
     Scanner scan = new Scanner(System.in);
     while(board.checkWin()==-1){
       System.out.println(player1Name + ", please enter a column (1-7).");
-      int p1 = scan.nextInt();
+      int p1;
       // TODO: CHECK VALIDITY OF VALUE ENTERED
+      while(true){
+        try{
+          p1 = scan.nextInt();
+          break;
+        }catch (InputMismatchException e){
+          System.out.println("Invalid; please reenter value.");
+        }
+      }
       board.dropPiece(p1-1, 0);
       board.printBoard();
       if(board.checkWin()!=-1){
@@ -32,42 +41,16 @@ public class Game{
         break;
       }
       System.out.println(player2Name + ", please enter a column (1-7).");
-      int p2 = scan.nextInt();
+      int p2;
       // TODO: CHECK VALIDITY OF VALUE ENTERED
-      board.dropPiece(p2-1, 1);
-      board.printBoard();
-      if(board.checkWin()!=-1){
-        System.out.println(player2Name + " wins!");
-        break;
+      while(true){
+        try{
+          p2 = scan.nextInt();
+          break;
+        }catch (InputMismatchException e){
+          System.out.println("Invalid; please reenter value.");
+        }
       }
-    }
-    System.out.println("Thanks for playing");
-  }
-  
-  public static void main(String[] args){
-    System.out.println("Welcome to Kinect4");
-    System.out.println("Designed by Dave, Santosh, and JJ");
-    System.out.println("----------------------------------");
-    Scanner scan = new Scanner(System.in); // Create new scanner
-    Board board = new Board(); // Create new board
-    System.out.println("Hi Player 1. Please enter your name");
-    player1Name = scan.nextLine();
-    System.out.println("Hi Player 2. Please enter your name");
-    player2Name = scan.nextLine();
-    board.printBoard(); // Initial board print
-    while(board.checkWin()==-1){
-      System.out.println(player1Name + ", please enter a column (1-7).");
-      int p1 = scan.nextInt();
-      // TODO: CHECK VALIDITY OF VALUE ENTERED
-      board.dropPiece(p1-1, 0);
-      board.printBoard();
-      if(board.checkWin()!=-1){
-        System.out.println(player1Name + " wins!");
-        break;
-      }
-      System.out.println(player2Name + ", please enter a column (1-7).");
-      int p2 = scan.nextInt();
-      // TODO: CHECK VALIDITY OF VALUE ENTERED
       board.dropPiece(p2-1, 1);
       board.printBoard();
       if(board.checkWin()!=-1){
