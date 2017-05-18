@@ -1,26 +1,39 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Game{
   
-  //private int playerTurn;
-  private static String player1Name;
-  private static String player2Name;
+  private String player1Name;
+  private String player2Name;
+  private Board board;
   
-  public static void main(String[] args){
+  public Game(String p1Name, String p2Name){
+    player1Name = p1Name;
+    player2Name = p2Name;
+    board = new Board();
+  }
+  
+  public static void intro(){
     System.out.println("Welcome to Kinect4");
     System.out.println("Designed by Dave, Santosh, and JJ");
     System.out.println("----------------------------------");
-    Scanner scan = new Scanner(System.in); // Create new scanner
-    Board board = new Board(); // Create new board
-    System.out.println("Hi Player 1. Please enter your name");
-    player1Name = scan.nextLine();
-    System.out.println("Hi Player 2. Please enter your name");
-    player2Name = scan.nextLine();
-    board.printBoard(); // Initial board print
+  }
+  
+  public void play(){
+    intro();
+    Scanner scan = new Scanner(System.in);
     while(board.checkWin()==-1){
       System.out.println(player1Name + ", please enter a column (1-7).");
-      int p1 = scan.nextInt();
+      int p1 = -1;
       // TODO: CHECK VALIDITY OF VALUE ENTERED
+      while(p1 == -1){
+        try{
+          p1 = scan.nextInt();
+        }catch (InputMismatchException e){
+          System.out.println("Invalid; please reenter value.");
+          scan.next();
+        }
+      }
       board.dropPiece(p1-1, 0);
       board.printBoard();
       if(board.checkWin()!=-1){
@@ -28,8 +41,15 @@ public class Game{
         break;
       }
       System.out.println(player2Name + ", please enter a column (1-7).");
-      int p2 = scan.nextInt();
+      int p2 = -1;
       // TODO: CHECK VALIDITY OF VALUE ENTERED
+      while(p2 == -1){
+        try{
+          p2 = scan.nextInt();
+        }catch (InputMismatchException e){
+          System.out.println("Invalid; please reenter value.");
+        }
+      }
       board.dropPiece(p2-1, 1);
       board.printBoard();
       if(board.checkWin()!=-1){
