@@ -34,6 +34,10 @@ public class Game{
           scan.next();
         }
       }
+      if(p1 < 1 || p1 > 7){
+        System.out.println("Invalid number; please reenter valuedeagea");
+        continue;
+      }
       board.dropPiece(p1-1, 0);
       board.printBoard();
       if(board.checkWin()!=-1){
@@ -49,6 +53,10 @@ public class Game{
         }catch (InputMismatchException e){
           System.out.println("Invalid; please reenter value.");
         }
+      }
+      if(p2 < 1 || p2 > 7){
+        System.out.println("Invalid number; please reenter valuedeagea");
+        continue;
       }
       board.dropPiece(p2-1, 1);
       board.printBoard();

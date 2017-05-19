@@ -13,10 +13,11 @@ public class Game{
     board = new Board();
   }
   
-  public static void intro(){
+  public void intro(){
     System.out.println("Welcome to Kinect4");
     System.out.println("Designed by Dave, Santosh, and JJ");
     System.out.println("----------------------------------");
+    board.printBoard();
   }
   
   public void play(){
