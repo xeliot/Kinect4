@@ -31,12 +31,12 @@ public class Game{
         try{
           p1 = scan.nextInt();
         }catch (InputMismatchException e){
-          System.out.println("Invalid; please reenter value.");
+          System.out.println("Invalid; please re-enter value.");
           scan.next();
         }
       }
       if(p1 < 1 || p1 > 7){
-        System.out.println("Invalid number; please reenter valuedeagea");
+        System.out.println("Invalid number; please re-enter value.");
         continue;
       }
       board.dropPiece(p1-1, 0);
