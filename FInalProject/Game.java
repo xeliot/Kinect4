@@ -67,5 +67,6 @@ public class Game{
       }
     }
     System.out.println("Thanks for playing");
+    scan.close();
   }
 }

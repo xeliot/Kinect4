@@ -9,5 +9,6 @@ public class Runner{
     String p2Name = scan.nextLine();
     Game game = new Game(p1Name, p2Name);
     game.play();
+    scan.close();
   }
 }

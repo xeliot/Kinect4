@@ -1,7 +1,3 @@
-import java.lang.Math;
-import java.util.List;
-import java.util.ArrayList;
-
 //NOTE
 //RED IS "O" IS 0
 //BLUE IS "X" IS 1
